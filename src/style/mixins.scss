@@ -1,0 +1,6 @@
+// 文本溢出变成 ... 样式
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
