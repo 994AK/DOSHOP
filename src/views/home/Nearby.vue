@@ -1,182 +1,68 @@
 <template>
   <div class="wrapper__nearby">
     <h3 class="wrapper__nearby__title">附近店铺</h3>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
+    <div
+      v-for="item in nearbyList"
+      class="wrapper__nearby__item"
+      :key="item.id"
+    >
+      <img class="wrapper__nearby__item__img" :src='item.imgUrl' alt=""/>
       <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
+        <div class="wrapper__nearby__item__content__title">{{ item.title }}</div>
         <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
+          <span
+            v-for="(innerItem,innerIndex) in item.tags"
+            :key="innerIndex"
+            class="wrapper__nearby__item__content__tags__tag"
+          >
+            {{ innerItem }}
+          </span>
         </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
+        <p class="wrapper__nearby__item__content__highlight">{{ item.desc }}</p>
       </div>
-
     </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
 
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
-    <div class="wrapper__nearby__item">
-      <img
-        class="wrapper__nearby__item__img"
-        src="../../assets/dummy_56x56_000000_e8968b.png"
-        alt=""
-      />
-      <div class="wrapper__nearby__item__content">
-        <div class="wrapper__nearby__item__content__title">沃尔玛</div>
-        <div class="wrapper__nearby__item__content__tags">
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-          <span class="wrapper__nearby__item__content__tags__tag">月售1万+</span>
-        </div>
-        <p class="wrapper__nearby__item__content__highlight">VIP满89减4元运费</p>
-      </div>
-
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Nearby"
+  name: "Nearby",
+  setup() {
+    const nearbyList = [
+      {
+        id: 1,
+        imgUrl: 'https://s2.loli.net/2021/12/06/LSgd6pJeTDb1asX.png',
+        title: '沃尔玛',
+        tags: ['月售1万+', '起送$0', '基础运费$5'],
+        desc: 'VIP满89元减4元运费劵'
+      }, {
+        id: 2,
+        imgUrl: 'https://s2.loli.net/2021/12/06/LSgd6pJeTDb1asX.png',
+        title: '沃尔玛',
+        tags: ['月售1万+', '起送$0', '基础运费$5'],
+        desc: 'VIP满89元减4元运费劵'
+      },
+      {
+        id: 3,
+        imgUrl: 'https://s2.loli.net/2021/12/06/LSgd6pJeTDb1asX.png',
+        title: '沃尔玛',
+        tags: ['月售1万+', '起送$0', '基础运费$5'],
+        desc: 'VIP满89元减4元运费劵'
+      },
+      {
+        id: 4 ,
+        imgUrl: 'https://s2.loli.net/2021/12/06/LSgd6pJeTDb1asX.png',
+        title: '沃尔玛',
+        tags: ['月售1万+', '起送$0', '基础运费$5'],
+        desc: 'VIP满89元减4元运费劵'
+      },
+
+
+    ]
+
+    return {nearbyList}
+  }
 }
 </script>
 

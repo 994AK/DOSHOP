@@ -14,85 +14,17 @@
       src="https://img.shuicaimi.com/c2020/12/09/0l5qdagaza1.jpg" alt="图片"/>
   </div>
   <div class="wrapper__icons">
-    <div class="wrapper__icons__item">
+    <div
+      v-for="item in StaticPartList"
+      :key="item.id"
+      class="wrapper__icons__item"
+    >
       <img
         class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
+        :src="item.imgUrl"
         alt=""
       />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
-    </div>
-    <div class="wrapper__icons__item">
-      <img
-        class="wrapper__icons__item__img"
-        src="../../assets/超市.png"
-        alt=""
-      />
-      <p class="wrapper__icons__item__desc">超市便利</p>
+      <p class="wrapper__icons__item__desc">{{ item.text }}</p>
     </div>
   </div>
   <div class="wrapper__gap"></div>
@@ -100,7 +32,54 @@
 
 <script>
 export default {
-  name: "StaticPart"
+  name: "StaticPart",
+  setup() {
+    const StaticPartList = [
+      {
+        id: '1',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '2',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '3',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '4',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '5',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '6',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '7',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '8',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '9',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }, {
+        id: '10',
+        imgUrl: 'https://s2.loli.net/2021/12/06/vWUC8m6PitMOGLz.png',
+        text: '超市便利'
+      }
+    ]
+
+    return {StaticPartList}
+  }
 }
 </script>
 
