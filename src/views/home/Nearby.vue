@@ -66,7 +66,8 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<!-- scoped CSS作用域 当前的组件使用-->
+<style lang="scss" scoped>
 @import '../../style/viriables.scss';
 
 .wrapper__nearby {
