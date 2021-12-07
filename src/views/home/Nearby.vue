@@ -27,8 +27,8 @@
 
 <script>
 export default {
-  name: "Nearby",
-  setup() {
+  name: 'Nearby',
+  setup () {
     const nearbyList = [
       {
         id: 1,
@@ -51,17 +51,14 @@ export default {
         desc: 'VIP满89元减4元运费劵'
       },
       {
-        id: 4 ,
+        id: 4,
         imgUrl: 'https://s2.loli.net/2021/12/06/LSgd6pJeTDb1asX.png',
         title: '沃尔玛',
         tags: ['月售1万+', '起送$0', '基础运费$5'],
         desc: 'VIP满89元减4元运费劵'
-      },
+      }]
 
-
-    ]
-
-    return {nearbyList}
+    return { nearbyList }
   }
 }
 </script>
