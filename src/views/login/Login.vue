@@ -2,10 +2,20 @@
   <div class="wrapper">
     <img src="../../assets/dummy_56x56_000000_e8968b.png" alt="" class="wrapper__img">
     <div class="wrapper__input">
-      <input type="password" placeholder="请输入手机号" class="wrapper__input__content"/>
+      <input
+        type="text"
+        placeholder="用户名"
+        class="wrapper__input__content"
+        v-model="data.username"
+      />
     </div>
     <div class="wrapper__input">
-      <input type="password" placeholder="请输入密码" class="wrapper__input__content"/>
+      <input
+        type="password"
+        placeholder="请输入密码"
+        class="wrapper__input__content"
+        v-model="data.password"
+      />
     </div>
     <div class="wrapper__login-button" @click="handleLogin">登录</div>
     <div class="wrapper__login-link" @click="handleRegister">立即注册</div>
@@ -14,21 +24,38 @@
 
 <script>
 import { useRouter } from 'vue-router'
+import { reactive } from 'vue'
+import { post } from '../../utils/request'
 
 export default {
   name: 'Login',
   setup () {
     const router = useRouter()
+    const data = reactive({
+      username: '',
+      password: ''
+    })
 
-    const handleLogin = () => {
-      localStorage.isLogin = true
-      router.push({ name: 'Home' })
+    const handleLogin = async () => {
+      try {
+        const result = await post('/api/user/login', {
+          username: data.username,
+          password: data.password
+        })
+        if (result?.data?.errno === 0) {
+          localStorage.isLogin = true
+          await router.push({ name: 'Home' })
+        } else {
+          alert('登录失败')
+        }
+      } catch (e) {
+        alert('请求失败')
+      }
     }
-
     const handleRegister = () => {
       router.push({ name: 'Register' })
     }
-    return { handleLogin, handleRegister }
+    return { data, handleLogin, handleRegister }
   }
 }
 </script>
