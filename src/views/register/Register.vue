@@ -12,6 +12,7 @@
     </div>
     <div class="wrapper__register-button" @click="handleRegister">注册</div>
     <div class="wrapper__register-link" @click="handleLoginClick">立即登录</div>
+    <Toast v-if="data.showToast" :message="data.toastMessage"/>
   </div>
 </template>
 
