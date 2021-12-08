@@ -36,18 +36,22 @@ const useLoginEffect = (showToast) => {
   /* 登录逻辑 */
   const handleLogin = async () => {
     try {
-      const result = await post('/api/user/login', {
-        username: data.username,
-        password: data.password
-      })
-
-      console.log(result)
-      if (result?.errno === 0) {
-        localStorage.isLogin = true
-        await router.push({ name: 'Home' })
+      const { username, password } = data
+      if (username || password) {
+        showToast('请检查填写完了吗')
       } else {
-        showToast('登录失败')
-        // alert('登录失败')
+        const result = await post('/api/user/login', {
+          username: data.username,
+          password: data.password
+        })
+
+        if (result?.errno === 0) {
+          localStorage.isLogin = true
+          await router.push({ name: 'Home' })
+        } else {
+          showToast('登录失败')
+          // alert('登录失败')
+        }
       }
     } catch (e) {
       showToast('请求失败')
@@ -72,6 +76,7 @@ const useRegisterEffect = () => {
 export default {
   name: 'Login',
   components: { Toast },
+  /* Setup函数的职责 */
   setup () {
     /* 弹框逻辑 */
     const { show, toastMessage, showToast } = useToastEffect()
